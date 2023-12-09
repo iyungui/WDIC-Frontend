@@ -31,7 +31,7 @@ struct HomeView: View {
     private var quoteToday: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text("你好, 金彩邻。")
+                Text("你好。")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
                 

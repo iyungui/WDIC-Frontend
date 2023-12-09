@@ -32,7 +32,7 @@ struct LessonWordsView: View {
 
             Spacer()
             if progress >= 1.0 {
-                nextButtonView()
+                nextWordQuizView()
                     .padding(.bottom)
             }
         }
@@ -44,10 +44,8 @@ struct LessonWordsView: View {
     
     private var titleView: some View {
         VStack(alignment: .center) {
-            Text("단어 익히기\n")
+            Text("단어 익히기")
                 .font(.system(size: 24, weight: .bold))
-//                .font(.title)
-//                .fontWeight(.bold)
                 .foregroundColor(Color.adaptiveWhiteBlack)
         }
     }
@@ -120,7 +118,7 @@ struct CardView: View {
     }
 }
 
-struct nextButtonView: View {
+struct nextWordQuizView: View {
     var body: some View {
         VStack(alignment: .center) {
             NavigationLink(destination: LessonWordsQuizView()) {

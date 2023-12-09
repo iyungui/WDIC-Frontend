@@ -12,7 +12,7 @@ struct LessonWordsQuizView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            QuizContentView()
+            QuizWordContentView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.adaptiveWhiteBlack.cornerRadius(20, corners: [.topLeft, .topRight]))
                 .padding(.top, 5)
@@ -25,7 +25,7 @@ struct LessonWordsQuizView: View {
     }
 }
 
-struct QuizContentView: View {
+struct QuizWordContentView: View {
     @State private var currentIndex: Int = 5
     private var words: [Word] = sampleWords
     private var totalCards: Int {

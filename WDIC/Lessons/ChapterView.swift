@@ -37,7 +37,6 @@ struct ChapterContentView: View {
             Spacer().frame(height: 100)
 
         }
-//        .padding()
         .frame(width: UIScreen.main.bounds.width)
         .background(Color.adaptiveWhiteBlack.cornerRadius(20, corners: [.topLeft, .topRight]))
     }
@@ -145,13 +144,14 @@ struct LessonListView: View {
                     }
                     
                     Spacer()
-                    
-                    Text("학습하기")
-                        .font(.caption)
-                        .foregroundColor(Color(red: 0.95, green: 0.59, blue: 0.13))
-                        .frame(width: 70, height: 25)
-                        .background(Color(red: 0.95, green: 0.59, blue: 0.13).opacity(0.2))
-                        .cornerRadius(4)
+                    NavigationLink(destination: LessonWordsView()) {
+                        Text("학습하기")
+                            .font(.caption)
+                            .foregroundColor(Color(red: 0.95, green: 0.59, blue: 0.13))
+                            .frame(width: 70, height: 25)
+                            .background(Color(red: 0.95, green: 0.59, blue: 0.13).opacity(0.2))
+                            .cornerRadius(4)
+                    }
                 }
                 .padding(10)
                 .frame(maxWidth: .infinity, alignment: .leading)
