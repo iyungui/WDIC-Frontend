@@ -22,6 +22,13 @@ extension Color {
     static let Color7 = Color("Color 7")
     static let Color8 = Color("Color 8")
     static let Color9 = Color("Color 9")
+    static let Color10 = Color("Color 10")
+    static let Color11 = Color("Color 11")
+    static let Color12 = Color("Color 12")
+    static let Color13 = Color("Color 13")
+    static let Color14 = Color("Color 14")
+    static let Color15 = Color("Color 15")
+    static let Color16 = Color("Color 16")
 
     static let darkColor = Color("DarkColor")
 
@@ -31,13 +38,5 @@ extension Color {
 extension Color {
     var uiColor: UIColor {
         return UIColor(self)
-    }
-}
-
-extension Color {
-    static var adaptiveWhiteBlack: Color {
-        Color(UIColor { traitCollection in
-            traitCollection.userInterfaceStyle == .dark ? .secondarySystemBackground : .white
-        })
     }
 }

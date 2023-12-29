@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60AFCBE2B32C5FF00C4632E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AFCBD2B32C5FF00C4632E /* ImagePicker.swift */; };
+		C60AFCC02B32CF1100C4632E /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AFCBF2B32CF1100C4632E /* KeyboardResponder.swift */; };
+		C60AFCC22B32D25100C4632E /* SentenceQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AFCC12B32D25100C4632E /* SentenceQuiz.swift */; };
+		C60AFCC42B32D3F800C4632E /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AFCC32B32D3F800C4632E /* QuizService.swift */; };
+		C60AFCC62B32D88F00C4632E /* SentenceQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AFCC52B32D88F00C4632E /* SentenceQuizViewModel.swift */; };
+		C60C6DDA2B2D51F800CDA538 /* EmailLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C6DD92B2D51F800CDA538 /* EmailLoginView.swift */; };
+		C60C6DDE2B2D54D500CDA538 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C6DDD2B2D54D500CDA538 /* UserDataModel.swift */; };
 		C60EC7DD2B09AC1300CAC30C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EC7DC2B09AC1300CAC30C /* MainView.swift */; };
 		C60EC7E02B09AF1C00CAC30C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EC7DF2B09AF1C00CAC30C /* CustomTabBar.swift */; };
 		C60EC7E22B09BA1E00CAC30C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EC7E12B09BA1D00CAC30C /* HomeView.swift */; };
+		C620AC2E2B2D8A4F000EF4F0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620AC2D2B2D8A4F000EF4F0 /* SignUpView.swift */; };
 		C6306C5A2B089FF3005ED617 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6306C592B089FF3005ED617 /* Launch Screen.storyboard */; };
 		C6306C5C2B08A30F005ED617 /* UIColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6306C5B2B08A30F005ED617 /* UIColorSet.swift */; };
 		C6426A2A2B09FECB00986A94 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = C6426A292B09FECB00986A94 /* ACarousel */; };
@@ -18,31 +26,53 @@
 		C6691C402B047D730083C678 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6691C3F2B047D730083C678 /* ContentView.swift */; };
 		C6691C422B047D750083C678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6691C412B047D750083C678 /* Assets.xcassets */; };
 		C6691C452B047D750083C678 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6691C442B047D750083C678 /* Preview Assets.xcassets */; };
+		C66B7CD62B3B2EE600E94BAE /* VocabularyQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66B7CD52B3B2EE600E94BAE /* VocabularyQuiz.swift */; };
+		C66B7CD82B3B315100E94BAE /* VocaQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66B7CD72B3B315100E94BAE /* VocaQuizViewModel.swift */; };
+		C66B7CDA2B3B347400E94BAE /* ProgressText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66B7CD92B3B347400E94BAE /* ProgressText.swift */; };
 		C6804CBD2B0CA1EF00E08A17 /* LessonWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CBC2B0CA1EF00E08A17 /* LessonWordsView.swift */; };
 		C6804CBF2B0CA1FC00E08A17 /* LessonSentencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CBE2B0CA1FC00E08A17 /* LessonSentencesView.swift */; };
 		C6804CC12B0CA20F00E08A17 /* LessonPronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */; };
 		C6804CC32B0CA22200E08A17 /* LessonWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */; };
 		C6804CC52B0CC74500E08A17 /* LessonWordsQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC42B0CC74400E08A17 /* LessonWordsQuizView.swift */; };
+		C68A08272B2F77CC00B788C6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08262B2F77CC00B788C6 /* UserService.swift */; };
+		C68A08292B2F785400B788C6 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08282B2F785400B788C6 /* APIEndpoint.swift */; };
+		C68A082C2B2F867400B788C6 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A082B2B2F867400B788C6 /* SignUpViewModel.swift */; };
+		C68A082E2B301F0800B788C6 /* UserAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A082D2B301F0800B788C6 /* UserAuthenticationManager.swift */; };
+		C68A08302B301F3000B788C6 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A082F2B301F3000B788C6 /* KeyChain.swift */; };
 		C6B8FDA92B205BC500D63A43 /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8FDA82B205BC500D63A43 /* SignInWithAppleView.swift */; };
 		C6B8FDAC2B205C1400D63A43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C6B8FDAB2B205C1400D63A43 /* Alamofire */; };
 		C6B8FDAF2B205EDA00D63A43 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C6B8FDAE2B205EDA00D63A43 /* GoogleSignIn */; };
 		C6B8FDB12B205EDA00D63A43 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C6B8FDB02B205EDA00D63A43 /* GoogleSignInSwift */; };
 		C6B8FDB32B205F5700D63A43 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C6B8FDB22B205F5700D63A43 /* GoogleSignIn */; };
 		C6B8FDB52B205F5700D63A43 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C6B8FDB42B205F5700D63A43 /* GoogleSignInSwift */; };
-		C6F166B52B0CFF9A00987A82 /* WordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166B42B0CFF9A00987A82 /* WordDataModel.swift */; };
+		C6C3EB772B30A97000372520 /* ChapterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB762B30A97000372520 /* ChapterDataModel.swift */; };
+		C6C3EB792B30AAA400372520 /* LessonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB782B30AAA400372520 /* LessonDataModel.swift */; };
+		C6C3EB7B2B315EF000372520 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB7A2B315EF000372520 /* UserViewModel.swift */; };
+		C6C3EB7D2B316EDB00372520 /* ChapterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB7C2B316EDB00372520 /* ChapterService.swift */; };
+		C6C3EB7F2B31709A00372520 /* ChapterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB7E2B31709A00372520 /* ChapterViewModel.swift */; };
+		C6C3EB812B317C1000372520 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB802B317C0F00372520 /* LessonService.swift */; };
+		C6C3EB832B317EB500372520 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB822B317EB500372520 /* LessonViewModel.swift */; };
+		C6C3EB852B31B95900372520 /* TextToSpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3EB842B31B95900372520 /* TextToSpeechManager.swift */; };
 		C6F166B72B0D133900987A82 /* ModalAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166B62B0D133900987A82 /* ModalAnswerView.swift */; };
 		C6F166BB2B0D992000987A82 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166BA2B0D992000987A82 /* CompleteView.swift */; };
 		C6F166BD2B0D9D3000987A82 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166BC2B0D9D3000987A82 /* ProgressBar.swift */; };
 		C6F166BF2B0DA34100987A82 /* NavigationViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166BE2B0DA34100987A82 /* NavigationViewComponent.swift */; };
-		C6F166C32B0DA6C400987A82 /* SentenceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166C22B0DA6C400987A82 /* SentenceDataModel.swift */; };
 		C6F166C52B0DBCC600987A82 /* LessonSentencesQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F166C42B0DBCC600987A82 /* LessonSentencesQuizView.swift */; };
 		C6F598A42B24A1B200439CFA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F598A32B24A1B200439CFA /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60AFCBD2B32C5FF00C4632E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C60AFCBF2B32CF1100C4632E /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		C60AFCC12B32D25100C4632E /* SentenceQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceQuiz.swift; sourceTree = "<group>"; };
+		C60AFCC32B32D3F800C4632E /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
+		C60AFCC52B32D88F00C4632E /* SentenceQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceQuizViewModel.swift; sourceTree = "<group>"; };
+		C60C6DD92B2D51F800CDA538 /* EmailLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginView.swift; sourceTree = "<group>"; };
+		C60C6DDD2B2D54D500CDA538 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C60EC7DC2B09AC1300CAC30C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C60EC7DF2B09AF1C00CAC30C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C60EC7E12B09BA1D00CAC30C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C620AC2D2B2D8A4F000EF4F0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C6306C592B089FF3005ED617 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C6306C5B2B08A30F005ED617 /* UIColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorSet.swift; path = ../../UIColorSet.swift; sourceTree = "<group>"; };
 		C6426A2B2B0A421100986A94 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
@@ -51,19 +81,33 @@
 		C6691C3F2B047D730083C678 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C6691C412B047D750083C678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6691C442B047D750083C678 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C66B7CD52B3B2EE600E94BAE /* VocabularyQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyQuiz.swift; sourceTree = "<group>"; };
+		C66B7CD72B3B315100E94BAE /* VocaQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocaQuizViewModel.swift; sourceTree = "<group>"; };
+		C66B7CD92B3B347400E94BAE /* ProgressText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressText.swift; sourceTree = "<group>"; };
 		C6804CBC2B0CA1EF00E08A17 /* LessonWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWordsView.swift; sourceTree = "<group>"; };
 		C6804CBE2B0CA1FC00E08A17 /* LessonSentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSentencesView.swift; sourceTree = "<group>"; };
 		C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPronView.swift; sourceTree = "<group>"; };
 		C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWriteView.swift; sourceTree = "<group>"; };
 		C6804CC42B0CC74400E08A17 /* LessonWordsQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWordsQuizView.swift; sourceTree = "<group>"; };
+		C68A08262B2F77CC00B788C6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C68A08282B2F785400B788C6 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		C68A082B2B2F867400B788C6 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		C68A082D2B301F0800B788C6 /* UserAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationManager.swift; sourceTree = "<group>"; };
+		C68A082F2B301F3000B788C6 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		C6B8FDA62B205ADD00D63A43 /* WDIC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WDIC.entitlements; sourceTree = "<group>"; };
 		C6B8FDA82B205BC500D63A43 /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
-		C6F166B42B0CFF9A00987A82 /* WordDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDataModel.swift; sourceTree = "<group>"; };
+		C6C3EB762B30A97000372520 /* ChapterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDataModel.swift; sourceTree = "<group>"; };
+		C6C3EB782B30AAA400372520 /* LessonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDataModel.swift; sourceTree = "<group>"; };
+		C6C3EB7A2B315EF000372520 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		C6C3EB7C2B316EDB00372520 /* ChapterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterService.swift; sourceTree = "<group>"; };
+		C6C3EB7E2B31709A00372520 /* ChapterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewModel.swift; sourceTree = "<group>"; };
+		C6C3EB802B317C0F00372520 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
+		C6C3EB822B317EB500372520 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
+		C6C3EB842B31B95900372520 /* TextToSpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechManager.swift; sourceTree = "<group>"; };
 		C6F166B62B0D133900987A82 /* ModalAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAnswerView.swift; sourceTree = "<group>"; };
 		C6F166BA2B0D992000987A82 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		C6F166BC2B0D9D3000987A82 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C6F166BE2B0DA34100987A82 /* NavigationViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewComponent.swift; sourceTree = "<group>"; };
-		C6F166C22B0DA6C400987A82 /* SentenceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceDataModel.swift; sourceTree = "<group>"; };
 		C6F166C42B0DBCC600987A82 /* LessonSentencesQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSentencesQuizView.swift; sourceTree = "<group>"; };
 		C6F598A32B24A1B200439CFA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,15 +129,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C60AFCBB2B3204DE00C4632E /* Pron */ = {
+			isa = PBXGroup;
+			children = (
+				C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */,
+			);
+			path = Pron;
+			sourceTree = "<group>";
+		};
+		C60AFCBC2B32A29F00C4632E /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
 		C60EC7DE2B09AF0400CAC30C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				C60EC7DF2B09AF1C00CAC30C /* CustomTabBar.swift */,
+				C60AFCBD2B32C5FF00C4632E /* ImagePicker.swift */,
+				C60AFCBF2B32CF1100C4632E /* KeyboardResponder.swift */,
 				C6306C5B2B08A30F005ED617 /* UIColorSet.swift */,
+				C6C3EB842B31B95900372520 /* TextToSpeechManager.swift */,
 				C6F166BC2B0D9D3000987A82 /* ProgressBar.swift */,
+				C66B7CD92B3B347400E94BAE /* ProgressText.swift */,
 				C6F166BE2B0DA34100987A82 /* NavigationViewComponent.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C61846202B259E670046823A /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				C60C6DD92B2D51F800CDA538 /* EmailLoginView.swift */,
+				C620AC2D2B2D8A4F000EF4F0 /* SignUpView.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 		C6691C312B047D730083C678 = {
@@ -117,12 +190,10 @@
 			children = (
 				C6B8FDA62B205ADD00D63A43 /* WDIC.entitlements */,
 				C6691C3D2B047D730083C678 /* WDICApp.swift */,
-				C6691C3F2B047D730083C678 /* ContentView.swift */,
-				C60EC7DC2B09AC1300CAC30C /* MainView.swift */,
+				C68A08312B30416300B788C6 /* View */,
+				C68A082A2B2F866000B788C6 /* ViewModel */,
+				C68A08252B2F77BD00B788C6 /* API */,
 				C6F166B12B0CFF7700987A82 /* Model */,
-				C6B8FDA72B205B9800D63A43 /* Login */,
-				C6804CB72B0CA02400E08A17 /* Home */,
-				C6804CB62B0C9F7000E08A17 /* Lessons */,
 				C60EC7DE2B09AF0400CAC30C /* Extension */,
 				C6691C412B047D750083C678 /* Assets.xcassets */,
 				C6306C592B089FF3005ED617 /* Launch Screen.storyboard */,
@@ -145,9 +216,9 @@
 				C6426A2B2B0A421100986A94 /* ChapterView.swift */,
 				C6F166C12B0DA3D700987A82 /* Word */,
 				C6F166C02B0DA3C200987A82 /* Sentence */,
-				C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */,
+				C60AFCBB2B3204DE00C4632E /* Pron */,
 				C6F166B62B0D133900987A82 /* ModalAnswerView.swift */,
-				C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */,
+				C60AFCBC2B32A29F00C4632E /* Write */,
 				C6F166BA2B0D992000987A82 /* CompleteView.swift */,
 			);
 			path = Lessons;
@@ -161,11 +232,59 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		C6B8FDA72B205B9800D63A43 /* Login */ = {
+		C68A08252B2F77BD00B788C6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C68A08262B2F77CC00B788C6 /* UserService.swift */,
+				C68A082D2B301F0800B788C6 /* UserAuthenticationManager.swift */,
+				C60AFCC32B32D3F800C4632E /* QuizService.swift */,
+				C6C3EB7C2B316EDB00372520 /* ChapterService.swift */,
+				C6C3EB802B317C0F00372520 /* LessonService.swift */,
+				C68A082F2B301F3000B788C6 /* KeyChain.swift */,
+				C68A08282B2F785400B788C6 /* APIEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C68A082A2B2F866000B788C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C68A082B2B2F867400B788C6 /* SignUpViewModel.swift */,
+				C6C3EB7A2B315EF000372520 /* UserViewModel.swift */,
+				C6C3EB822B317EB500372520 /* LessonViewModel.swift */,
+				C6C3EB7E2B31709A00372520 /* ChapterViewModel.swift */,
+				C66B7CD72B3B315100E94BAE /* VocaQuizViewModel.swift */,
+				C60AFCC52B32D88F00C4632E /* SentenceQuizViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C68A08312B30416300B788C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6691C3F2B047D730083C678 /* ContentView.swift */,
+				C60EC7DC2B09AC1300CAC30C /* MainView.swift */,
+				C6804CB62B0C9F7000E08A17 /* Lessons */,
+				C6804CB72B0CA02400E08A17 /* Home */,
+				C6B8FDA72B205B9800D63A43 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C68A08322B3041C800B788C6 /* SocialLogin */ = {
 			isa = PBXGroup;
 			children = (
 				C6B8FDA82B205BC500D63A43 /* SignInWithAppleView.swift */,
+			);
+			path = SocialLogin;
+			sourceTree = "<group>";
+		};
+		C6B8FDA72B205B9800D63A43 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C68A08322B3041C800B788C6 /* SocialLogin */,
 				C6F598A32B24A1B200439CFA /* LoginView.swift */,
+				C61846202B259E670046823A /* Email */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -173,8 +292,11 @@
 		C6F166B12B0CFF7700987A82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C6F166B42B0CFF9A00987A82 /* WordDataModel.swift */,
-				C6F166C22B0DA6C400987A82 /* SentenceDataModel.swift */,
+				C6C3EB762B30A97000372520 /* ChapterDataModel.swift */,
+				C6C3EB782B30AAA400372520 /* LessonDataModel.swift */,
+				C60C6DDD2B2D54D500CDA538 /* UserDataModel.swift */,
+				C60AFCC12B32D25100C4632E /* SentenceQuiz.swift */,
+				C66B7CD52B3B2EE600E94BAE /* VocabularyQuiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,26 +403,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F166C32B0DA6C400987A82 /* SentenceDataModel.swift in Sources */,
+				C60AFCC42B32D3F800C4632E /* QuizService.swift in Sources */,
+				C6C3EB7F2B31709A00372520 /* ChapterViewModel.swift in Sources */,
+				C6C3EB772B30A97000372520 /* ChapterDataModel.swift in Sources */,
+				C68A08272B2F77CC00B788C6 /* UserService.swift in Sources */,
 				C6F166BF2B0DA34100987A82 /* NavigationViewComponent.swift in Sources */,
 				C6691C402B047D730083C678 /* ContentView.swift in Sources */,
 				C60EC7E02B09AF1C00CAC30C /* CustomTabBar.swift in Sources */,
+				C60AFCBE2B32C5FF00C4632E /* ImagePicker.swift in Sources */,
+				C68A08292B2F785400B788C6 /* APIEndpoint.swift in Sources */,
+				C620AC2E2B2D8A4F000EF4F0 /* SignUpView.swift in Sources */,
+				C68A08302B301F3000B788C6 /* KeyChain.swift in Sources */,
+				C6C3EB812B317C1000372520 /* LessonService.swift in Sources */,
 				C6F166B72B0D133900987A82 /* ModalAnswerView.swift in Sources */,
+				C6C3EB792B30AAA400372520 /* LessonDataModel.swift in Sources */,
+				C6C3EB7D2B316EDB00372520 /* ChapterService.swift in Sources */,
+				C60C6DDA2B2D51F800CDA538 /* EmailLoginView.swift in Sources */,
 				C6804CBF2B0CA1FC00E08A17 /* LessonSentencesView.swift in Sources */,
 				C6426A2C2B0A421100986A94 /* ChapterView.swift in Sources */,
 				C60EC7DD2B09AC1300CAC30C /* MainView.swift in Sources */,
 				C6F166BD2B0D9D3000987A82 /* ProgressBar.swift in Sources */,
+				C68A082C2B2F867400B788C6 /* SignUpViewModel.swift in Sources */,
 				C60EC7E22B09BA1E00CAC30C /* HomeView.swift in Sources */,
 				C6F166C52B0DBCC600987A82 /* LessonSentencesQuizView.swift in Sources */,
+				C60AFCC02B32CF1100C4632E /* KeyboardResponder.swift in Sources */,
+				C66B7CDA2B3B347400E94BAE /* ProgressText.swift in Sources */,
+				C68A082E2B301F0800B788C6 /* UserAuthenticationManager.swift in Sources */,
+				C6C3EB852B31B95900372520 /* TextToSpeechManager.swift in Sources */,
+				C66B7CD62B3B2EE600E94BAE /* VocabularyQuiz.swift in Sources */,
 				C6691C3E2B047D730083C678 /* WDICApp.swift in Sources */,
 				C6804CC32B0CA22200E08A17 /* LessonWriteView.swift in Sources */,
+				C60C6DDE2B2D54D500CDA538 /* UserDataModel.swift in Sources */,
 				C6804CBD2B0CA1EF00E08A17 /* LessonWordsView.swift in Sources */,
 				C6306C5C2B08A30F005ED617 /* UIColorSet.swift in Sources */,
+				C6C3EB7B2B315EF000372520 /* UserViewModel.swift in Sources */,
 				C6F598A42B24A1B200439CFA /* LoginView.swift in Sources */,
+				C66B7CD82B3B315100E94BAE /* VocaQuizViewModel.swift in Sources */,
 				C6804CC12B0CA20F00E08A17 /* LessonPronView.swift in Sources */,
 				C6804CC52B0CC74500E08A17 /* LessonWordsQuizView.swift in Sources */,
+				C60AFCC22B32D25100C4632E /* SentenceQuiz.swift in Sources */,
+				C6C3EB832B317EB500372520 /* LessonViewModel.swift in Sources */,
+				C60AFCC62B32D88F00C4632E /* SentenceQuizViewModel.swift in Sources */,
 				C6B8FDA92B205BC500D63A43 /* SignInWithAppleView.swift in Sources */,
-				C6F166B52B0CFF9A00987A82 /* WordDataModel.swift in Sources */,
 				C6F166BB2B0D992000987A82 /* CompleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,11 +587,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 사용자가 새로운 사진을 촬영하여 게시물로 바로 사용할 수 있도록 카메라 접근 권한을 요청합니다. 이 권한을 허용하면, 앱 내에서 직접 카메라를 활성화하여 새로운 이미지를 촬영하고 업로드할 수 있습니다. 카메라 권한은 오직 이 목적으로만 사용됩니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 촬영한 사진을 저장하려면 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 게시물에 사용할 사진을 선택하려면 사진 라이브러리 접근 권한이 필요합니다. 이 권한을 허용하면, 귀하의 기기에 저장된 사진들 중에서 원하는 이미지를 선택하여 앱 내에서 업로드하고 공유할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,9 +604,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev_WDIC;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,11 +628,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 사용자가 새로운 사진을 촬영하여 게시물로 바로 사용할 수 있도록 카메라 접근 권한을 요청합니다. 이 권한을 허용하면, 앱 내에서 직접 카메라를 활성화하여 새로운 이미지를 촬영하고 업로드할 수 있습니다. 카메라 권한은 오직 이 목적으로만 사용됩니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 촬영한 사진을 저장하려면 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 게시물에 사용할 사진을 선택하려면 사진 라이브러리 접근 권한이 필요합니다. 이 권한을 허용하면, 귀하의 기기에 저장된 사진들 중에서 원하는 이미지를 선택하여 앱 내에서 업로드하고 공유할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,9 +645,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = adhoc_WDIC;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

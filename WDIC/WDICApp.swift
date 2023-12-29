@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct WDICApp: App {
-    init() {
-        Thread.sleep(forTimeInterval: 2)
-    }
+//    init() {
+//        Thread.sleep(forTimeInterval: 2)
+//    }
+    
+    @StateObject var userAuthManager = UserAuthenticationManager()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ContentView().environmentObject(userAuthManager)
         }
     }
 }
