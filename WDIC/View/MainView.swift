@@ -62,38 +62,9 @@ struct MainView: View {
     }
 }
 
-struct CommunityView: View {
-    var body: some View {
-        Text("CommunityView Tab Content")
-    }
-}
 
-struct CalendarView: View {
-    var body: some View {
-        Text("CalendarView Tab Content")
-    }
-}
 
-struct ProfileView: View {
-    
-    @EnvironmentObject var userAuthManager: UserAuthenticationManager
-    @EnvironmentObject var userViewModel: UserViewModel
-    
-    var body: some View {
-        VStack(spacing: 30) {
-            Button(action: {
-                userAuthManager.logout { result in
-                    if case .failure(let error) = result {
-                        print("로그아웃 실패: \(error.localizedDescription)")
-                    }
-                }
-            }, label: {
-                Text("로그아웃")
-            })
-            
-        }
-    }
-}
+
 
 #Preview {
     ProfileView()

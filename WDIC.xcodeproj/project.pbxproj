@@ -22,6 +22,10 @@
 		C6306C5C2B08A30F005ED617 /* UIColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6306C5B2B08A30F005ED617 /* UIColorSet.swift */; };
 		C6426A2A2B09FECB00986A94 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = C6426A292B09FECB00986A94 /* ACarousel */; };
 		C6426A2C2B0A421100986A94 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6426A2B2B0A421100986A94 /* ChapterView.swift */; };
+		C660330F2B3FCC6B00C976F3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660330E2B3FCC6B00C976F3 /* CustomAlertView.swift */; };
+		C66033122B3FD4F800C976F3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033112B3FD4F800C976F3 /* ProfileView.swift */; };
+		C66033152B3FD52B00C976F3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033142B3FD52B00C976F3 /* CalendarView.swift */; };
+		C66033182B3FD54600C976F3 /* CommunityViwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033172B3FD54600C976F3 /* CommunityViwe.swift */; };
 		C6691C3E2B047D730083C678 /* WDICApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6691C3D2B047D730083C678 /* WDICApp.swift */; };
 		C6691C402B047D730083C678 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6691C3F2B047D730083C678 /* ContentView.swift */; };
 		C6691C422B047D750083C678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6691C412B047D750083C678 /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		C6306C592B089FF3005ED617 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C6306C5B2B08A30F005ED617 /* UIColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorSet.swift; path = ../../UIColorSet.swift; sourceTree = "<group>"; };
 		C6426A2B2B0A421100986A94 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		C660330E2B3FCC6B00C976F3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		C66033112B3FD4F800C976F3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C66033142B3FD52B00C976F3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		C66033172B3FD54600C976F3 /* CommunityViwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViwe.swift; sourceTree = "<group>"; };
 		C6691C3A2B047D730083C678 /* WDIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDIC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6691C3D2B047D730083C678 /* WDICApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDICApp.swift; sourceTree = "<group>"; };
 		C6691C3F2B047D730083C678 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */,
+				C660330E2B3FCC6B00C976F3 /* CustomAlertView.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -167,6 +176,30 @@
 				C620AC2D2B2D8A4F000EF4F0 /* SignUpView.swift */,
 			);
 			path = Email;
+			sourceTree = "<group>";
+		};
+		C66033102B3FD4E600C976F3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C66033112B3FD4F800C976F3 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C66033132B3FD51A00C976F3 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				C66033142B3FD52B00C976F3 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		C66033162B3FD53700C976F3 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				C66033172B3FD54600C976F3 /* CommunityViwe.swift */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		C6691C312B047D730083C678 = {
@@ -264,6 +297,9 @@
 			children = (
 				C6691C3F2B047D730083C678 /* ContentView.swift */,
 				C60EC7DC2B09AC1300CAC30C /* MainView.swift */,
+				C66033162B3FD53700C976F3 /* Community */,
+				C66033132B3FD51A00C976F3 /* Calendar */,
+				C66033102B3FD4E600C976F3 /* Profile */,
 				C6804CB62B0C9F7000E08A17 /* Lessons */,
 				C6804CB72B0CA02400E08A17 /* Home */,
 				C6B8FDA72B205B9800D63A43 /* Login */,
@@ -405,12 +441,15 @@
 			files = (
 				C60AFCC42B32D3F800C4632E /* QuizService.swift in Sources */,
 				C6C3EB7F2B31709A00372520 /* ChapterViewModel.swift in Sources */,
+				C66033152B3FD52B00C976F3 /* CalendarView.swift in Sources */,
+				C660330F2B3FCC6B00C976F3 /* CustomAlertView.swift in Sources */,
 				C6C3EB772B30A97000372520 /* ChapterDataModel.swift in Sources */,
 				C68A08272B2F77CC00B788C6 /* UserService.swift in Sources */,
 				C6F166BF2B0DA34100987A82 /* NavigationViewComponent.swift in Sources */,
 				C6691C402B047D730083C678 /* ContentView.swift in Sources */,
 				C60EC7E02B09AF1C00CAC30C /* CustomTabBar.swift in Sources */,
 				C60AFCBE2B32C5FF00C4632E /* ImagePicker.swift in Sources */,
+				C66033182B3FD54600C976F3 /* CommunityViwe.swift in Sources */,
 				C68A08292B2F785400B788C6 /* APIEndpoint.swift in Sources */,
 				C620AC2E2B2D8A4F000EF4F0 /* SignUpView.swift in Sources */,
 				C68A08302B301F3000B788C6 /* KeyChain.swift in Sources */,
@@ -439,6 +478,7 @@
 				C6C3EB7B2B315EF000372520 /* UserViewModel.swift in Sources */,
 				C6F598A42B24A1B200439CFA /* LoginView.swift in Sources */,
 				C66B7CD82B3B315100E94BAE /* VocaQuizViewModel.swift in Sources */,
+				C66033122B3FD4F800C976F3 /* ProfileView.swift in Sources */,
 				C6804CC12B0CA20F00E08A17 /* LessonPronView.swift in Sources */,
 				C6804CC52B0CC74500E08A17 /* LessonWordsQuizView.swift in Sources */,
 				C60AFCC22B32D25100C4632E /* SentenceQuiz.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LessonWriteView: View {
     @EnvironmentObject var viewModel: LessonViewModel
+    @State private var showingAlert = false
 
     @Environment(\.presentationMode) var presentationMode
     
@@ -19,7 +20,7 @@ struct LessonWriteView: View {
                 .ignoresSafeArea(.all)
             
             VStack(alignment: .center)  {
-                WriteContentView()
+                WriteContentView(showingAlert: $showingAlert)
                     .environmentObject(viewModel)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white.cornerRadius(20, corners: [.topLeft, .topRight]))
@@ -27,6 +28,20 @@ struct LessonWriteView: View {
                     .edgesIgnoringSafeArea(.bottom)
             }
             .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "작문"))
+            
+            if showingAlert {
+                Color.black.opacity(0.5)
+                    .ignoresSafeArea(.all)
+            }
+            
+            if showingAlert {
+                CustomAlertView()
+                    .frame(minWidth: 300, minHeight: 200)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .zIndex(2)
+            }
+            
         }
         .onAppear {
             viewModel.fetchLessonPart(partType: "writing")
@@ -34,7 +49,6 @@ struct LessonWriteView: View {
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-
 }
 
 struct WriteContentView: View {
@@ -42,7 +56,8 @@ struct WriteContentView: View {
     
     @State private var text: String = ""
     @State private var currentStep: Int = 0
-    @State private var showingAlert = false
+    
+    @Binding var showingAlert: Bool
 
     @State private var currentIndex: Int = 0
     
@@ -66,9 +81,7 @@ struct WriteContentView: View {
                         self.currentStep = 0
                         self.text = ""
                     } else {
-                        // Handle scenario when all cards are viewed
-                        // e.g., navigate to a different view or show a completion message
-                        print("all cards are viewed")
+                        self.showingAlert = true
                     }
                 }, previousStep: {
                     self.currentStep -= 1

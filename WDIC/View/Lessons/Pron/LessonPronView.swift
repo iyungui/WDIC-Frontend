@@ -30,28 +30,27 @@ struct LessonPronView: View {
                 .ignoresSafeArea(.all)
             
             VStack(alignment: .center) {
+                Spacer()
                 titleView
                 .padding(.top)
 
-//                Text("\(currentIndex + 1) / \(totalCards)")
-                NavigationLink(destination: LessonWriteView().environmentObject(viewModel)) {
-                    Text("next")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal, 50)
-                        .padding(.top, 5)
-                }
-
+                Text("\(currentIndex + 1) / \(totalCards)")
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 50)
+                    .padding(.top, 5)
+                                
                 PronContentView(currentIndex: $currentIndex)
+                    .environmentObject(viewModel)
                     .padding(.top)
-                            
-//                if CGFloat(currentIndex + 1) / CGFloat(totalCards) >= 1.0 {
-//                    CompletePronView()
-//                        .environmentObject(viewModel)
-//                }
             }
             .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "발음"))
+            
+            if CGFloat(currentIndex + 1) / CGFloat(totalCards) >= 1.0 {
+                CompletePronView()
+                    .environmentObject(viewModel)
+            }
         }
         .onAppear {
             viewModel.fetchLessonPart(partType: "pronunciation")
@@ -82,24 +81,20 @@ struct PronContentView: View {
     }
     
     private var pronText: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.white)
-                .cornerRadius(20)
+        VStack(alignment: .center, spacing: 10) {
             
-            VStack(alignment: .center, spacing: 10) {
-                
-                Text("niúnǎi zài zhuōzi pángbiān")
-                    .font(.subheadline)
-                    .fontWeight(.light)
-                
-                Text("牛奶在桌子旁边。")
-                    .font(.headline)
-                Text("우유가 책상 옆에 있다.")
-                    .font(.headline)
-            }
+            Text(viewModel.pronunciation?[currentIndex].pinyin ?? "Default pinyin")
+                .font(.subheadline)
+                .fontWeight(.light)
+            
+            Text(viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+                .font(.headline)
+            Text(viewModel.pronunciation?[currentIndex].translation ?? "Default translation")
+                .font(.headline)
         }
         .frame(maxWidth: .infinity, maxHeight: 200)
+        .background(Color.white)
+        .cornerRadius(20)
         .padding(.horizontal, 40)
     }
 
@@ -119,6 +114,7 @@ struct PronContentView: View {
         .fontWeight(.bold)
         .foregroundColor(.white)
     }
+    
     private func adviceText() -> Text {
         return Text("참 잘했어요!")
     }
@@ -129,15 +125,45 @@ struct PronContentView: View {
             feedbackText
             VStack(alignment: .center) {
                 HStack {
-                    Image("record")
+                    Image(systemName: "waveform.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(Color.Color4)
+                    
                     Spacer()
-                    Image("mike")
+                    Button(action: {
+                        isSpeaking.toggle()
+                        if isSpeaking {
+                            TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+                        } else {
+                            TextToSpeechManager.shared.stop()
+                        }
+                    }) {
+                        Image(systemName: "record.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(Color.Color2)
+                    }
+
                     Spacer()
-                    Image("next")
+                    
+                    Button(action: {
+                        self.currentIndex += 1
+                    }) {
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.Color4)
+                    }
                 }
+                .padding()
+                .padding(.horizontal, 20)
             }
             .frame(maxWidth: .infinity)
-            .padding(.top, 20)
+            .padding(.vertical, 40)
             .padding(.horizontal)
             .background(Color.white)
             .cornerRadius(20)
