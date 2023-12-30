@@ -22,7 +22,8 @@ struct LessonPronView: View {
         CGFloat(currentIndex + 1) / CGFloat(totalCards)
     }
     @State private var showingCompleteView: Bool = false
-    
+    @State private var isDataReady = false
+
     var body: some View {
         ZStack {
             Image("backgroundImage")
@@ -41,19 +42,28 @@ struct LessonPronView: View {
                     .padding(.horizontal, 50)
                     .padding(.top, 5)
                                 
-                PronContentView(currentIndex: $currentIndex)
+                PronContentView(currentIndex: $currentIndex, totalCards: totalCards)
                     .environmentObject(viewModel)
                     .padding(.top)
             }
             .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "발음"))
-            
-            if CGFloat(currentIndex + 1) / CGFloat(totalCards) >= 1.0 {
+            if currentIndex > totalCards - 1 {
                 CompletePronView()
                     .environmentObject(viewModel)
             }
+
         }
         .onAppear {
             viewModel.fetchLessonPart(partType: "pronunciation")
+        }
+        .onChange(of: viewModel.pronunciation?.count) { _ in
+            isDataReady = true
+            TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+        }
+        .onChange(of: currentIndex) { _ in
+            if isDataReady {
+                TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+            }
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -69,28 +79,48 @@ struct LessonPronView: View {
 
 struct PronContentView: View {
     @EnvironmentObject var viewModel: LessonViewModel
+    @StateObject private var audioRecorderPlayer = AudioRecorderPlayer()
+
     @Binding var currentIndex: Int
-    @State private var isSpeaking = false
-    @State private var step: Int = 3
-    
+    var totalCards: Int
+
+    @State private var isSpeaking: Bool = false
+    @State private var isRecording: Bool = false
+    @State private var step: Int = 0
+    @State private var showingPermissionAlert = false
+
     var body: some View {
         VStack {
             pronText
             toolButtonView
         }
+        .alert(isPresented: $showingPermissionAlert) { permissionAlert }
     }
     
     private var pronText: some View {
         VStack(alignment: .center, spacing: 10) {
             
-            Text(viewModel.pronunciation?[currentIndex].pinyin ?? "Default pinyin")
+            Text(viewModel.pronunciation?[safe: currentIndex]?.pinyin ?? "Default pinyin")
                 .font(.subheadline)
                 .fontWeight(.light)
             
-            Text(viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+            Text(viewModel.pronunciation?[safe:currentIndex]?.sentence ?? "Default sentence")
                 .font(.headline)
-            Text(viewModel.pronunciation?[currentIndex].translation ?? "Default translation")
+            Text(viewModel.pronunciation?[safe:currentIndex]?.translation ?? "Default translation")
                 .font(.headline)
+            
+            // tts 다시 재생 버튼
+            Button(action: {
+                isSpeaking.toggle()
+                if isSpeaking {
+                    TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+                } else {
+                    TextToSpeechManager.shared.stop()
+                }
+            }) {
+                Image(systemName: "speaker.wave.2.fill")
+                    .foregroundColor(Color.Color6)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: 200)
         .background(Color.white)
@@ -101,23 +131,39 @@ struct PronContentView: View {
     private var feedbackText: some View {
         VStack {
             if step == 0 {
-                Text("들어보세요.")
+                feedbackTextView(text: "들어보세요.")
             } else if step == 1 {
-                Text("따라해보세요.")
+                feedbackTextView(text: "따라해보세요.")
             } else if step == 2 {
-                Text("다시 시도해보세요.")
+                feedbackTextView(text: "다시 시도해보세요.")
             } else {
-                adviceText()
+                feedbackTextView(text: "참 잘했어요!")
             }
         }
-        .font(.title)
-        .fontWeight(.bold)
-        .foregroundColor(.white)
     }
-    
-    private func adviceText() -> Text {
-        return Text("참 잘했어요!")
+
+    private func feedbackTextView(text: String) -> some View {
+        Text(text)
+            .font(.title)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .scaleEffect(isRecording ? 1.1 : 0.9)
+            .animation(.easeInOut(duration: 0.5))
     }
+
+    private var permissionAlert: Alert {
+        Alert(
+            title: Text("Microphone Access Required"),
+            message: Text("This app requires access to your microphone for recording. Please enable microphone access in your device settings."),
+            dismissButton: .default(Text("Settings")) {
+                // Open the settings app
+                if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        )
+    }
+
     
     private var toolButtonView: some View {
         VStack {
@@ -125,32 +171,56 @@ struct PronContentView: View {
             feedbackText
             VStack(alignment: .center) {
                 HStack {
-                    Image(systemName: "waveform.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.Color4)
-                    
-                    Spacer()
-                    Button(action: {
-                        isSpeaking.toggle()
-                        if isSpeaking {
-                            TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
-                        } else {
-                            TextToSpeechManager.shared.stop()
-                        }
-                    }) {
-                        Image(systemName: "record.circle")
+                    Button(action: audioRecorderPlayer.startPlayback) {
+                        Image(systemName: "waveform.circle")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(Color.Color2)
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.Color4)
                     }
 
                     Spacer()
                     
+                    // Record/Stop button
                     Button(action: {
-                        self.currentIndex += 1
+                        self.audioRecorderPlayer.checkMicrophonePermission { granted in
+                            if granted {
+                                withAnimation {
+                                    self.isRecording.toggle()
+                                    if self.isRecording {
+                                        self.audioRecorderPlayer.startRecording()
+                                        self.step = 1
+                                    } else {
+                                        self.audioRecorderPlayer.stopRecording()
+                                        self.step = 3
+                                    }
+                                }
+                            } else {
+                                self.showingPermissionAlert = true
+                                print("Microphone access denied")
+                            }
+                        }
+                    }) {
+                        Image(systemName: self.isRecording ? "mic.circle.fill" : "mic.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(self.isRecording ? Color.Color2 : Color.Color4)
+                            .scaleEffect(self.isRecording ? 1.1 : 1.0)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+
+                    Spacer()
+                    
+                    // 다음 문장으로 이동 버튼
+                    Button(action: {
+                        if currentIndex < totalCards {
+                            print("currentIndex: \(self.currentIndex)")
+                            print("totalCards: \(self.totalCards)")
+
+                            self.currentIndex += 1
+                            self.step = 0
+                        }
                     }) {
                         Image(systemName: "play.circle")
                             .resizable()
@@ -158,6 +228,7 @@ struct PronContentView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(Color.Color4)
                     }
+
                 }
                 .padding()
                 .padding(.horizontal, 20)

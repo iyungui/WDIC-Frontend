@@ -36,6 +36,7 @@ struct LessonWriteView: View {
             
             if showingAlert {
                 CustomAlertView()
+                    .environmentObject(viewModel)
                     .frame(minWidth: 300, minHeight: 200)
                     .background(Color.white)
                     .cornerRadius(10)

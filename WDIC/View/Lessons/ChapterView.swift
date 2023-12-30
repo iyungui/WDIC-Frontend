@@ -16,21 +16,20 @@ struct ChapterView: View {
                 .resizable()
                 .ignoresSafeArea(.all)
             
-            ScrollView {
-                VStack(spacing: 0) {
-                    Image("logo_1")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 250)
-
-                    ChapterContentView()
-                        .environmentObject(chapterViewModel)
-                        .offset(y: -95)
-                }
+            VStack(alignment: .center) {
+                Image("logo_1")
+                Spacer()
             }
+            .offset(y: -30)
+            
+            VStack(spacing: 0) {
+                ChapterContentView()
+                    .environmentObject(chapterViewModel)
+                    .offset(y: 100)
+            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-
     }
 }
 
@@ -38,17 +37,16 @@ struct ChapterContentView: View {
     @EnvironmentObject var chapterViewModel: ChapterViewModel
 
     var body: some View {
-        VStack {
-            titleView
-            
-            Divider().padding(.horizontal, 20)
-            
-            ChapterListView().environmentObject(chapterViewModel)
-            
-            Spacer().frame(height: 100)
+        ScrollView {
+            VStack {
+                titleView
+                Divider().padding(.horizontal, 20)
+                ChapterListView().environmentObject(chapterViewModel)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white.cornerRadius(20, corners: [.topLeft, .topRight]))
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     private var titleView: some View {

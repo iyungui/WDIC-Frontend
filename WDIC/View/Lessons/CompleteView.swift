@@ -227,7 +227,7 @@ struct CompleteView: View {
                 
                 Spacer()
             }
-            .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "발음"))
+            .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "작문"))
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

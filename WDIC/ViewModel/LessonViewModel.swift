@@ -35,8 +35,6 @@ class LessonViewModel: ObservableObject {
                 self?.isLoading = false
                 switch result {
                 case .success(let content):
-//                    print("\(self?.lessonId ?? "") success load lessons")
-//                    print("Raw data: \(String(describing: content))")
                     self?.updateContent(with: content, partType: partType)
                 case .failure(let error):
                     print("\(self?.lessonId ?? "") fail load lessons")

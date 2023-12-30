@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CustomAlertView: View {
+    @EnvironmentObject var viewModel: LessonViewModel
+
     var body: some View {
         VStack(spacing: 20) {
             Image("logo_1")
@@ -22,8 +24,8 @@ struct CustomAlertView: View {
             Text("커뮤니티 게시판에 질문을 업로드할까요?")
             
             HStack(spacing: 20) {
-                Button(action: {
-                }) {
+                
+                NavigationLink(destination: CompleteView().environmentObject(viewModel)) {
                     Text("홈으로 가기")
                         .foregroundColor(.white)
                         .padding()
@@ -31,9 +33,7 @@ struct CustomAlertView: View {
                         .cornerRadius(8)
                 }
                 
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: CompleteView().environmentObject(viewModel)) {
                     Text("업로드 하기")
                         .foregroundColor(.white)
                         .padding()

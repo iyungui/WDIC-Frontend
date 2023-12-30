@@ -9,10 +9,19 @@ import SwiftUI
 
 struct CalendarView: View {
     var body: some View {
-        Text("CalendarView Tab Content")
+        ZStack {
+            Image("backgroundImage")
+                .resizable()
+                .ignoresSafeArea(.all)
+            Text("CalendarView Tab Content")
+        }
     }
 }
+
+
+
 
 #Preview {
     CalendarView()
 }
+

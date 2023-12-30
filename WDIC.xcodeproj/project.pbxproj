@@ -25,7 +25,9 @@
 		C660330F2B3FCC6B00C976F3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660330E2B3FCC6B00C976F3 /* CustomAlertView.swift */; };
 		C66033122B3FD4F800C976F3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033112B3FD4F800C976F3 /* ProfileView.swift */; };
 		C66033152B3FD52B00C976F3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033142B3FD52B00C976F3 /* CalendarView.swift */; };
-		C66033182B3FD54600C976F3 /* CommunityViwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033172B3FD54600C976F3 /* CommunityViwe.swift */; };
+		C66033182B3FD54600C976F3 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033172B3FD54600C976F3 /* CommunityView.swift */; };
+		C660331A2B3FEFC200C976F3 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66033192B3FEFC200C976F3 /* PostDetailView.swift */; };
+		C660331C2B3FF9EF00C976F3 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660331B2B3FF9EE00C976F3 /* FullScreenImageView.swift */; };
 		C6691C3E2B047D730083C678 /* WDICApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6691C3D2B047D730083C678 /* WDICApp.swift */; };
 		C6691C402B047D730083C678 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6691C3F2B047D730083C678 /* ContentView.swift */; };
 		C6691C422B047D750083C678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6691C412B047D750083C678 /* Assets.xcassets */; };
@@ -38,6 +40,7 @@
 		C6804CC12B0CA20F00E08A17 /* LessonPronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */; };
 		C6804CC32B0CA22200E08A17 /* LessonWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */; };
 		C6804CC52B0CC74500E08A17 /* LessonWordsQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6804CC42B0CC74400E08A17 /* LessonWordsQuizView.swift */; };
+		C688231A2B40549800747076 /* AudioRecorderPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68823192B40549800747076 /* AudioRecorderPlayer.swift */; };
 		C68A08272B2F77CC00B788C6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08262B2F77CC00B788C6 /* UserService.swift */; };
 		C68A08292B2F785400B788C6 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08282B2F785400B788C6 /* APIEndpoint.swift */; };
 		C68A082C2B2F867400B788C6 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A082B2B2F867400B788C6 /* SignUpViewModel.swift */; };
@@ -83,7 +86,9 @@
 		C660330E2B3FCC6B00C976F3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		C66033112B3FD4F800C976F3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C66033142B3FD52B00C976F3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		C66033172B3FD54600C976F3 /* CommunityViwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViwe.swift; sourceTree = "<group>"; };
+		C66033172B3FD54600C976F3 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		C66033192B3FEFC200C976F3 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		C660331B2B3FF9EE00C976F3 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
 		C6691C3A2B047D730083C678 /* WDIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDIC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6691C3D2B047D730083C678 /* WDICApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDICApp.swift; sourceTree = "<group>"; };
 		C6691C3F2B047D730083C678 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		C6804CC02B0CA20F00E08A17 /* LessonPronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPronView.swift; sourceTree = "<group>"; };
 		C6804CC22B0CA22200E08A17 /* LessonWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWriteView.swift; sourceTree = "<group>"; };
 		C6804CC42B0CC74400E08A17 /* LessonWordsQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWordsQuizView.swift; sourceTree = "<group>"; };
+		C68823192B40549800747076 /* AudioRecorderPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderPlayer.swift; sourceTree = "<group>"; };
 		C68A08262B2F77CC00B788C6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C68A08282B2F785400B788C6 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		C68A082B2B2F867400B788C6 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 				C6F166BC2B0D9D3000987A82 /* ProgressBar.swift */,
 				C66B7CD92B3B347400E94BAE /* ProgressText.swift */,
 				C6F166BE2B0DA34100987A82 /* NavigationViewComponent.swift */,
+				C68823192B40549800747076 /* AudioRecorderPlayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -197,7 +204,8 @@
 		C66033162B3FD53700C976F3 /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				C66033172B3FD54600C976F3 /* CommunityViwe.swift */,
+				C66033172B3FD54600C976F3 /* CommunityView.swift */,
+				C66033192B3FEFC200C976F3 /* PostDetailView.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 			children = (
 				C6691C3F2B047D730083C678 /* ContentView.swift */,
 				C60EC7DC2B09AC1300CAC30C /* MainView.swift */,
+				C660331B2B3FF9EE00C976F3 /* FullScreenImageView.swift */,
 				C66033162B3FD53700C976F3 /* Community */,
 				C66033132B3FD51A00C976F3 /* Calendar */,
 				C66033102B3FD4E600C976F3 /* Profile */,
@@ -442,6 +451,8 @@
 				C60AFCC42B32D3F800C4632E /* QuizService.swift in Sources */,
 				C6C3EB7F2B31709A00372520 /* ChapterViewModel.swift in Sources */,
 				C66033152B3FD52B00C976F3 /* CalendarView.swift in Sources */,
+				C660331A2B3FEFC200C976F3 /* PostDetailView.swift in Sources */,
+				C688231A2B40549800747076 /* AudioRecorderPlayer.swift in Sources */,
 				C660330F2B3FCC6B00C976F3 /* CustomAlertView.swift in Sources */,
 				C6C3EB772B30A97000372520 /* ChapterDataModel.swift in Sources */,
 				C68A08272B2F77CC00B788C6 /* UserService.swift in Sources */,
@@ -449,7 +460,7 @@
 				C6691C402B047D730083C678 /* ContentView.swift in Sources */,
 				C60EC7E02B09AF1C00CAC30C /* CustomTabBar.swift in Sources */,
 				C60AFCBE2B32C5FF00C4632E /* ImagePicker.swift in Sources */,
-				C66033182B3FD54600C976F3 /* CommunityViwe.swift in Sources */,
+				C66033182B3FD54600C976F3 /* CommunityView.swift in Sources */,
 				C68A08292B2F785400B788C6 /* APIEndpoint.swift in Sources */,
 				C620AC2E2B2D8A4F000EF4F0 /* SignUpView.swift in Sources */,
 				C68A08302B301F3000B788C6 /* KeyChain.swift in Sources */,
@@ -480,6 +491,7 @@
 				C66B7CD82B3B315100E94BAE /* VocaQuizViewModel.swift in Sources */,
 				C66033122B3FD4F800C976F3 /* ProfileView.swift in Sources */,
 				C6804CC12B0CA20F00E08A17 /* LessonPronView.swift in Sources */,
+				C660331C2B3FF9EF00C976F3 /* FullScreenImageView.swift in Sources */,
 				C6804CC52B0CC74500E08A17 /* LessonWordsQuizView.swift in Sources */,
 				C60AFCC22B32D25100C4632E /* SentenceQuiz.swift in Sources */,
 				C6C3EB832B317EB500372520 /* LessonViewModel.swift in Sources */,
@@ -628,6 +640,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 사용자가 새로운 사진을 촬영하여 게시물로 바로 사용할 수 있도록 카메라 접근 권한을 요청합니다. 이 권한을 허용하면, 앱 내에서 직접 카메라를 활성화하여 새로운 이미지를 촬영하고 업로드할 수 있습니다. 카메라 권한은 오직 이 목적으로만 사용됩니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "이 앱은 사용자의 오디오 녹음 기능을 제공하기 위해 마이크 접근 권한이 필요합니다. 녹음 기능은 사용자의 발음을 녹음하고 평가하는 데 사용됩니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 촬영한 사진을 저장하려면 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 게시물에 사용할 사진을 선택하려면 사진 라이브러리 접근 권한이 필요합니다. 이 권한을 허용하면, 귀하의 기기에 저장된 사진들 중에서 원하는 이미지를 선택하여 앱 내에서 업로드하고 공유할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -669,6 +682,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 사용자가 새로운 사진을 촬영하여 게시물로 바로 사용할 수 있도록 카메라 접근 권한을 요청합니다. 이 권한을 허용하면, 앱 내에서 직접 카메라를 활성화하여 새로운 이미지를 촬영하고 업로드할 수 있습니다. 카메라 권한은 오직 이 목적으로만 사용됩니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "이 앱은 사용자의 오디오 녹음 기능을 제공하기 위해 마이크 접근 권한이 필요합니다. 녹음 기능은 사용자의 발음을 녹음하고 평가하는 데 사용됩니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 촬영한 사진을 저장하려면 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 게시물에 사용할 사진을 선택하려면 사진 라이브러리 접근 권한이 필요합니다. 이 권한을 허용하면, 귀하의 기기에 저장된 사진들 중에서 원하는 이미지를 선택하여 앱 내에서 업로드하고 공유할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

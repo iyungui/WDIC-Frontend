@@ -31,9 +31,9 @@ struct ModalAnswerView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black.opacity(0.5))
         .ignoresSafeArea()
-        .onTapGesture {
-            showModal = false
-        }
+//        .onTapGesture {
+//            showModal = false
+//        }
     }
     private var titleView: some View {
         HStack(spacing: 10) {
@@ -112,9 +112,9 @@ struct SentenceModalAnswerView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black.opacity(0.5))
         .ignoresSafeArea()
-        .onTapGesture {
-            showModal = false
-        }
+//        .onTapGesture {
+//            showModal = false
+//        }
     }
 
     private var titleView: some View {
