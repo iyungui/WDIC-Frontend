@@ -44,6 +44,11 @@
 ## 프로젝트 개요
 WDIC는 "Writing Documents In Chinese"의 약자로, 중국어 통번역 수업용 교구로 사용되기 위해 개발된 중국어 학습 앱입니다. (단어, 문장, 발음, 작문 학습 단계로 진행)
 
+## 시연 영상
+
+https://github.com/user-attachments/assets/ebd5eb8a-a201-4073-8f0b-327ca9e5ea66
+
+
 
 ## ✨ 주요 기능
 
