@@ -12,11 +12,11 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if userAuthManager.isUserAuthenticated {
+//            if userAuthManager.isUserAuthenticated {
                 MainView().environmentObject(userAuthManager)
-            } else {
-                LoginView().environmentObject(userAuthManager)
-            }
+//            } else {
+//                LoginView().environmentObject(userAuthManager)
+//            }
         }
         .onAppear(perform: userAuthManager.validateToken)
     }

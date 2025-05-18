@@ -45,13 +45,15 @@ struct LessonWriteView: View {
             
         }
         .onAppear {
-            viewModel.fetchLessonPart(partType: "writing")
+            // 백엔드 대신 Mock 데이터 사용
+            viewModel.setupMockData()
+            // 원래 코드 - 필요할 때 주석 해제
+            // viewModel.fetchLessonPart(partType: "writing")
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
 struct WriteContentView: View {
     @EnvironmentObject var viewModel: LessonViewModel
     

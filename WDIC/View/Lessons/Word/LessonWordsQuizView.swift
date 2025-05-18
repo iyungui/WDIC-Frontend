@@ -50,7 +50,6 @@ struct QuizWordContentView: View {
         guard let quizzes = quizViewModel.quiz?.quizzes, currentIndex < quizzes.count else { return nil }
         return quizzes[currentIndex]
     }
-    
 
     var body: some View {
         ZStack {
@@ -62,7 +61,10 @@ struct QuizWordContentView: View {
                 buttonView
             }
             .onAppear {
-                quizViewModel.fetchQuizzes(forLesson: viewModel.lessonId)
+                // 백엔드 대신 Mock 데이터 사용
+                quizViewModel.setupMockData()
+                // 원래 코드 - 필요할 때 주석 해제
+                // quizViewModel.fetchQuizzes(forLesson: viewModel.lessonId)
             }
             if showModal {
                 ModalAnswerView(showModal: $showModal, currentIndex: $currentIndex, showCompleteView: $showCompleteView)
@@ -76,6 +78,8 @@ struct QuizWordContentView: View {
         .animation(.default, value: showModal)
         .edgesIgnoringSafeArea(.all)
     }
+    
+    // 기존 코드 유지...
     private var titleView: some View {
         VStack {
             Text("단어 익히기 QUIZ")
@@ -123,7 +127,6 @@ struct QuizWordContentView: View {
         }
     }
 }
-
 
 struct QuizWordsView: View {
     @EnvironmentObject var quizViewModel: VocaQuizViewModel

@@ -54,15 +54,26 @@ struct LessonPronView: View {
 
         }
         .onAppear {
-            viewModel.fetchLessonPart(partType: "pronunciation")
+            // 백엔드 대신 Mock 데이터 사용
+            viewModel.setupMockData()
+            isDataReady = true
+            // 첫 번째 문장 TTS 자동 실행
+            if let sentence = viewModel.pronunciation?.first?.sentence {
+                TextToSpeechManager.shared.speak(text: sentence)
+            }
+            
+            // 원래 코드 - 필요할 때 주석 해제
+            // viewModel.fetchLessonPart(partType: "pronunciation")
         }
         .onChange(of: viewModel.pronunciation?.count) { _ in
             isDataReady = true
-            TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+            if let sentence = viewModel.pronunciation?[currentIndex].sentence {
+                TextToSpeechManager.shared.speak(text: sentence)
+            }
         }
         .onChange(of: currentIndex) { _ in
-            if isDataReady {
-                TextToSpeechManager.shared.speak(text: viewModel.pronunciation?[currentIndex].sentence ?? "Default sentence")
+            if isDataReady, let sentence = viewModel.pronunciation?[currentIndex].sentence {
+                TextToSpeechManager.shared.speak(text: sentence)
             }
         }
         .navigationBarBackButtonHidden()
@@ -76,7 +87,6 @@ struct LessonPronView: View {
         }
     }
 }
-
 struct PronContentView: View {
     @EnvironmentObject var viewModel: LessonViewModel
     @StateObject private var audioRecorderPlayer = AudioRecorderPlayer()

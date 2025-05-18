@@ -31,6 +31,7 @@ struct LessonSentencesQuizView: View {
     }
 }
 
+
 struct QuizSentenceContentView: View {
     @EnvironmentObject var viewModel: LessonViewModel
     @StateObject var quizViewModel = SentenceQuizViewModel()
@@ -60,10 +61,12 @@ struct QuizSentenceContentView: View {
                 quizContentView
                 quizTextView
                 quizOptionsView
-//                buttonView
             }
             .onAppear {
-                quizViewModel.fetchQuizzes(forLesson: viewModel.lessonId)
+                // 백엔드 대신 Mock 데이터 사용
+                quizViewModel.setupMockData()
+                // 원래 코드 - 필요할 때 주석 해제
+                // quizViewModel.fetchQuizzes(forLesson: viewModel.lessonId)
             }
             if showModal {
                 SentenceModalAnswerView(showModal: $showModal, currentIndex: $currentIndex, showCompleteView: $showCompleteView)
@@ -77,6 +80,8 @@ struct QuizSentenceContentView: View {
         .animation(.default, value: showModal)
         .edgesIgnoringSafeArea(.all)
     }
+    
+    // 기존 코드 유지...
     private var titleView: some View {
         VStack {
             Text("문장 배우기 QUIZ")
@@ -126,8 +131,10 @@ struct QuizSentenceContentView: View {
             ForEach(currentQuiz?.options ?? [], id: \.self) { option in
                 Button(action: {
                     quizViewModel.selectedOption = option
-                    quizViewModel.checkAnswer(forQuiz: currentQuiz!)
-                    showModal = true
+                    if let currentQuiz = currentQuiz {
+                        quizViewModel.checkAnswer(forQuiz: currentQuiz)
+                        showModal = true
+                    }
                 }) {
                     Text(option)
                         .font(.headline)
@@ -142,23 +149,7 @@ struct QuizSentenceContentView: View {
         }
         .padding(.horizontal, 20)
     }
-
-//    private var buttonView: some View {
-//        VStack(alignment: .center) {
-//            Button(action: {
-//                self.showModal = true
-//            }) {
-//                Text("선택하기")
-//                    .foregroundColor(.white)
-//                    .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
-//                    .background(Color.Color6)
-//                    .cornerRadius(10)
-//                    .padding(.horizontal, 40)
-//            }
-//        }
-//    }
 }
-
 #Preview {
     LessonSentencesQuizView()
 }

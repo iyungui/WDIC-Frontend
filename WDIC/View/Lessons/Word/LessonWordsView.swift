@@ -41,7 +41,6 @@ struct LessonWordsView: View {
                 titleView
                     .padding(.top)
 
-//                ProgressBar(progress: .constant(progress))
                 Text("\(currentIndex + 1) / \(totalCards)")
                     .font(.title3)
                     .foregroundColor(.white)
@@ -60,7 +59,10 @@ struct LessonWordsView: View {
             .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "단어"))
         }
         .onAppear {
-            viewModel.fetchLessonPart(partType: "vocabulary")
+            // 백엔드 대신 Mock 데이터 사용
+            viewModel.setupMockData()
+            // 원래 코드 - 필요할 때 주석 해제
+            // viewModel.fetchLessonPart(partType: "vocabulary")
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

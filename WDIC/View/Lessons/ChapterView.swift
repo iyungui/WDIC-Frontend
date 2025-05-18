@@ -80,7 +80,10 @@ struct ChapterListView: View {
             }
         }
         .onAppear {
-            chapterViewModel.fetchChapters()
+            // 백엔드 대신 Mock 데이터 사용
+            chapterViewModel.setupMockData()
+            // 원래 코드 - 필요할 때 주석 해제
+            // chapterViewModel.fetchChapters()
         }
         .padding(.top, 10)
     }
@@ -149,6 +152,7 @@ struct ChapterItemView: View {
         .fontWeight(.bold)
         .foregroundColor(Color.blue)*/
 
+// 장 별 레슨 목록 보기
 struct LessonListView: View {
     let lessonIds: [String]
 

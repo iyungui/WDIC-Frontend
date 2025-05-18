@@ -18,7 +18,6 @@ struct LessonSentencesView: View {
         viewModel.sentences?.count ?? 0
     }
 
-    
     var body: some View {
         ZStack {
             Image("backgroundImage")
@@ -47,7 +46,10 @@ struct LessonSentencesView: View {
             .navigationBarItems(leading: NavigationViewComponent(highlightedItem: "문장"))
         }
         .onAppear {
-            viewModel.fetchLessonPart(partType: "sentences")
+            // 백엔드 대신 Mock 데이터 사용
+            viewModel.setupMockData()
+            // 원래 코드 - 필요할 때 주석 해제
+            // viewModel.fetchLessonPart(partType: "sentences")
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
