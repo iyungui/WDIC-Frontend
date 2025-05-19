@@ -46,7 +46,7 @@ WDIC는 "Writing Documents In Chinese"의 약자로, 중국어 통번역 수업�
 
 ## 시연 영상
 
-https://github.com/user-attachments/assets/ebd5eb8a-a201-4073-8f0b-327ca9e5ea66
+https://github.com/user-attachments/assets/a08ff240-0511-43d2-a00b-904f1a766723
 
 
 
